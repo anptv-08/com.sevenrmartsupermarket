@@ -15,7 +15,7 @@ public class LoginTest extends Base {
 	HomePage homePage;
 	ExcelRead excelRead=new ExcelRead();
 
-	@Test
+	@Test(groups = "regression")
 	public void verifyLogin() {
 		loginPage = new LoginPage(driver);
 		loginPage.login("admin", "admin");
@@ -29,7 +29,7 @@ public class LoginTest extends Base {
 	
 
 	
-	@Test
+	@Test(groups = "smoke")
 	public void excelRead() {
 		excelRead.setExcelFile("LoginCredentials", "Valid Login Credentials"); //Workbookname & sheetName
 		String username1=excelRead.getCellData(1, 0);

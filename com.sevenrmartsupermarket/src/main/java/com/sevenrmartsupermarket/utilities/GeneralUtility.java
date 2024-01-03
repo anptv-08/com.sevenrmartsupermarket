@@ -36,6 +36,10 @@ public class GeneralUtility {
 	public boolean element_IsSelected(WebElement element) {
 		return element.isSelected();
 	}
+	
+	public String getJSAlertText() {
+		return driver.switchTo().alert().getText();
+	}
 
 	public List<String> getTextOfElements(List<WebElement> elements) {
 		List<String> textOfElement = new ArrayList<String>();

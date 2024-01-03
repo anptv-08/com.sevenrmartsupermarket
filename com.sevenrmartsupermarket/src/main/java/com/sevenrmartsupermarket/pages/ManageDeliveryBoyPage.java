@@ -26,6 +26,9 @@ public class ManageDeliveryBoyPage {
 
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	WebElement createNewDeliveryBoyElement;
+	
+	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
+	WebElement successAlertMessage;
 
 	@FindBy(xpath = "//input[@id='name']")
 	WebElement nameElement;
@@ -50,6 +53,8 @@ public class ManageDeliveryBoyPage {
 	
 	@FindBy(xpath="//button[@class='btn btn-danger']")
 	WebElement updateButton;
+	
+	
 	
 	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//tbody//tr[1]//td")
 	List<WebElement> deliveryBoyRowDataElement;
@@ -141,5 +146,10 @@ public class ManageDeliveryBoyPage {
 				"//table[@class='table table-bordered table-hover table-sm']//tbody/tr[" + index + "]/td[8]//a[1]"));
 		pageUtility.scroll_AndClick(editDeliveryBoyElement);
 		clearName();
+	}
+	
+	public boolean isSuccessMessageAlertDisplayed() {
+		generalUtility=new GeneralUtility(driver);
+		return generalUtility.element_IsDisplayed(successAlertMessage);
 	}
 }

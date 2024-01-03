@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="multipleTestSuite" thread-count="5" parallel="tests" >
+	<listeners>
+		<listener class-name="com.sevenrmartsupermarket.listeners.ExtentReporter"></listener>
+	</listeners>
+	<test name="Smoke Testing">
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.LoginTest"></class>
+			
+		</classes>
+	</test>
+	<test name="Regression Testing">
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest"></class>
+		</classes>
+	</test>
+	<test name="Regression Testing2">
+		<classes>
+			<class name="com.sevenrmartsupermarket.tests.PushNotificationsTest"></class>
+		</classes>
+	</test>
+
+
+</suite>

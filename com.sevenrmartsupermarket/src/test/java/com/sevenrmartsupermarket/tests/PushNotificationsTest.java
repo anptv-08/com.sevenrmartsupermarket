@@ -15,7 +15,8 @@ public class PushNotificationsTest extends Base {
 	LoginPage loginPage;
 	ExcelRead excelRead=new ExcelRead();
 	SoftAssert softassert=new SoftAssert();;
-	@Test
+	
+	@Test(groups = "smoke")
 	public void verifyPushNotificationMessage() throws InterruptedException {
 		pushNotificationsPage=new PushNotificationsPage(driver);
 		loginPage=new LoginPage(driver);

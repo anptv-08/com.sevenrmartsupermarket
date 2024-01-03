@@ -15,6 +15,12 @@ public class HomePage {
 	@FindBy(xpath="//a[@class='d-block']")
 	WebElement profileName;
 	
+	@FindBy(xpath="//li[@class='nav-item dropdown show']//a[@class='nav-link']")
+	WebElement profileSettingsElement;
+	
+	@FindBy(xpath="(//a[@class='dropdown-item'])[2]")
+	WebElement logoutElement;
+	
 	public HomePage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -23,5 +29,10 @@ public class HomePage {
 	public String getProfileName() {
 		generalUtility=new GeneralUtility(driver);
 		return generalUtility.get_Text(profileName);
+	}
+	
+	public void logOut() {
+		profileSettingsElement.click();
+		logoutElement.click();
 	}
 }

@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest">
+      <class name="dataproviderexample.DataProviderLoginTest">
         <methods>
           <include name="launchBrowser"/>
-          <include name="verifyCreatingNewDeliveryBoy"/>
+          <include name="launchBrowser"/>
+          <include name="verifyLoginUsingDataProvider"/>
           <include name="terminateSession"/>
         </methods>
-      </class> <!-- com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest -->
+      </class> <!-- dataproviderexample.DataProviderLoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

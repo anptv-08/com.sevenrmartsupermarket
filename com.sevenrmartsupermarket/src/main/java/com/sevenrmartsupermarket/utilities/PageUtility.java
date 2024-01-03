@@ -1,5 +1,7 @@
 package com.sevenrmartsupermarket.utilities;
 
+import java.io.File;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,6 +14,7 @@ public class PageUtility {
 	Actions actions;
 	Select select;
 	JavascriptExecutor js;
+	File file;
 
 	public PageUtility(WebDriver driver) {
 		this.driver = driver;
@@ -21,10 +24,20 @@ public class PageUtility {
 		actions = new Actions(driver);
 		actions.moveToElement(element).build().perform();
 	}
+	
+	public void mouseClick() {
+		actions=new Actions(driver);
+		actions.click().build().perform();
+	}
 
 	public void rightClick(WebElement element) {
 		actions = new Actions(driver);
 		actions.contextClick(element).build().perform();
+	}
+	
+	public void dragAndDropElements(WebElement sourceElement, WebElement destinationElement) {
+		actions=new Actions(driver);
+		actions.dragAndDrop(sourceElement, destinationElement).build().perform();
 	}
 
 	public void select_ByIndex(WebElement element, int index) {
@@ -59,5 +72,32 @@ public class PageUtility {
 			return false;
 		}
 	}
+	
+	public void uploadFile(WebElement element, String path) {
+		file=new File(path);
+		element.sendKeys(file.getAbsolutePath());	
+	}
+	
+//	public void handleJSAlertOK() {
+//		driver.switchTo().alert().accept();
+//	}
+//	
+//	public void handleJSAlertDismiss() {
+//		driver.switchTo().alert().dismiss();
+//	}
+//	
+//	public void handleJSAlertPrompt(String message) {
+//		driver.switchTo().alert().sendKeys(message);
+//		handleJSAlertOK();
+//	}
+//	
+//	public void switchToIFrame(WebElement element) {
+//		driver.switchTo().frame(element);
+//	}
+//	
+//	public void switchToDefaultContent() {
+//		driver.switchTo().defaultContent();
+//	}
+	
 
 }
