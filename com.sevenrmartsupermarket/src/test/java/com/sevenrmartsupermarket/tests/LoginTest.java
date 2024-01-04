@@ -4,18 +4,23 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import com.github.javafaker.Faker;
 import com.sevenrmartsupermarket.base.Base;
+import com.sevenrmartsupermarket.listeners.RetryAnalyzer;
 import com.sevenrmartsupermarket.pages.HomePage;
 import com.sevenrmartsupermarket.pages.LoginPage;
 import com.sevenrmartsupermarket.utilities.ExcelRead;
+
+
 
 public class LoginTest extends Base {
 
 	LoginPage loginPage;
 	HomePage homePage;
 	ExcelRead excelRead=new ExcelRead();
+	Faker faker=new Faker();
 
-	@Test(groups = "regression")
+	@Test(groups = "regression", retryAnalyzer = RetryAnalyzer.class)
 	public void verifyLogin() {
 		loginPage = new LoginPage(driver);
 		loginPage.login("admin", "admin");
@@ -23,7 +28,6 @@ public class LoginTest extends Base {
 		String actualProfileName = homePage.getProfileName();
 		String expectedProfileName = "Admin";
 		Assert.assertEquals(actualProfileName, expectedProfileName);
-		
 	}
 
 	
@@ -36,5 +40,14 @@ public class LoginTest extends Base {
 		String password1=excelRead.getCellData(1, 1);
 		System.out.println(username1);
 		System.out.println(password1);
+	}
+	
+	@Test(dataProvider = "7rmart supermarket Login", dataProviderClass=com.sevenrmartsupermarket.base.Data_Provider.class)
+	public void verifyLoginUsingDataProvider(String userName, String password, String profileName) {
+		loginPage = new LoginPage(driver);
+		homePage=new HomePage(driver);
+		loginPage.login(userName, password);
+		String actualProfileName=homePage.getProfileName();
+		Assert.assertEquals(actualProfileName, profileName);
 	}
 }

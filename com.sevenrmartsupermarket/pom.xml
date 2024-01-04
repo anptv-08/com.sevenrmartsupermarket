@@ -5,6 +5,10 @@
 	<groupId>com.sevenrmartsupermarket</groupId>
 	<artifactId>com.sevenrmartsupermarket</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -45,9 +49,10 @@
 		</dependency>
 
 		<dependency>
-			<groupId>AggregationProject</groupId>
-			<artifactId>AggregationProject</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>0.12</version>
 		</dependency>
+
 	</dependencies>
 </project>

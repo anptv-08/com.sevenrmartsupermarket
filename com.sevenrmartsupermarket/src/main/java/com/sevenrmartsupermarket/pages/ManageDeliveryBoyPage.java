@@ -54,6 +54,12 @@ public class ManageDeliveryBoyPage {
 	@FindBy(xpath="//button[@class='btn btn-danger']")
 	WebElement updateButton;
 	
+	@FindBy(xpath="(//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[7]//a[1])[1]")
+	WebElement showPasswordElement;
+	
+	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//tbody//tr[2]//td")
+	WebElement passwordDataElement;
+	
 	
 	
 	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//tbody//tr[1]//td")
@@ -129,6 +135,12 @@ public class ManageDeliveryBoyPage {
 		List<String> rowDatas=generalUtility.getTextOfElements(deliveryBoyRowDataElement);
 		return rowDatas;
 	}
+	
+	public String getPasswordText() {
+		generalUtility=new GeneralUtility(driver);
+		clickOnShowPasswordElement();
+		return generalUtility.get_Text(passwordDataElement);
+	}
 
 	public void editDeliveryBoy(String deliveryBoyName) {
 		generalUtility = new GeneralUtility(driver);
@@ -151,5 +163,9 @@ public class ManageDeliveryBoyPage {
 	public boolean isSuccessMessageAlertDisplayed() {
 		generalUtility=new GeneralUtility(driver);
 		return generalUtility.element_IsDisplayed(successAlertMessage);
+	}
+	
+	public void clickOnShowPasswordElement() {
+		showPasswordElement.click();
 	}
 }

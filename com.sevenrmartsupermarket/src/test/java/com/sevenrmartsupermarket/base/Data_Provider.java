@@ -1,4 +1,4 @@
-package dataproviderexample;
+package com.sevenrmartsupermarket.base;
 
 import org.testng.annotations.DataProvider;
 
