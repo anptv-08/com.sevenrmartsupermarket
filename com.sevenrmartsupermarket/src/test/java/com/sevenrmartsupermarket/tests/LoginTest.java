@@ -9,16 +9,14 @@ import com.sevenrmartsupermarket.base.Base;
 import com.sevenrmartsupermarket.listeners.RetryAnalyzer;
 import com.sevenrmartsupermarket.pages.HomePage;
 import com.sevenrmartsupermarket.pages.LoginPage;
-import com.sevenrmartsupermarket.utilities.ExcelRead;
-
-
+import com.sevenrmartsupermarket.utilities.ExcelReadUtility;
 
 public class LoginTest extends Base {
 
 	LoginPage loginPage;
 	HomePage homePage;
-	ExcelRead excelRead=new ExcelRead();
-	Faker faker=new Faker();
+	ExcelReadUtility excelRead = new ExcelReadUtility();
+	Faker faker = new Faker();
 
 	@Test(groups = "regression", retryAnalyzer = RetryAnalyzer.class)
 	public void verifyLogin() {
@@ -30,24 +28,21 @@ public class LoginTest extends Base {
 		Assert.assertEquals(actualProfileName, expectedProfileName);
 	}
 
-	
-
-	
 	@Test(groups = "smoke")
 	public void excelRead() {
-		excelRead.setExcelFile("LoginCredentials", "Valid Login Credentials"); //Workbookname & sheetName
-		String username1=excelRead.getCellData(1, 0);
-		String password1=excelRead.getCellData(1, 1);
+		excelRead.setExcelFile("LoginCredentials", "Valid Login Credentials"); // Workbookname & sheetName
+		String username1 = excelRead.getCellData(1, 0);
+		String password1 = excelRead.getCellData(1, 1);
 		System.out.println(username1);
 		System.out.println(password1);
 	}
-	
-	@Test(dataProvider = "7rmart supermarket Login", dataProviderClass=com.sevenrmartsupermarket.base.Data_Provider.class)
+
+	@Test(dataProvider = "SevenMart SuperMarket Valid Login", dataProviderClass = com.sevenrmartsupermarket.base.Data_Provider.class)
 	public void verifyLoginUsingDataProvider(String userName, String password, String profileName) {
 		loginPage = new LoginPage(driver);
-		homePage=new HomePage(driver);
+		homePage = new HomePage(driver);
 		loginPage.login(userName, password);
-		String actualProfileName=homePage.getProfileName();
+		String actualProfileName = homePage.getProfileName();
 		Assert.assertEquals(actualProfileName, profileName);
 	}
 }

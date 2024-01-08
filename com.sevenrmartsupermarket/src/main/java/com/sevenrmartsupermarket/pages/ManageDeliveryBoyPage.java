@@ -165,6 +165,11 @@ public class ManageDeliveryBoyPage {
 		return generalUtility.element_IsDisplayed(successAlertMessage);
 	}
 	
+	public String getBackgroundColorOfSuccessMessageAlert() {
+		generalUtility=new GeneralUtility(driver);
+		return generalUtility.get_CssValue(successAlertMessage,"background-color" );
+	}
+	
 	public void clickOnShowPasswordElement() {
 		showPasswordElement.click();
 	}

@@ -2,7 +2,7 @@ package com.sevenrmartsupermarket.tests;
 
 import java.util.List;
 
-import org.openqa.selenium.WebDriver;
+
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -10,14 +10,14 @@ import com.github.javafaker.Faker;
 import com.sevenrmartsupermarket.base.Base;
 import com.sevenrmartsupermarket.pages.LoginPage;
 import com.sevenrmartsupermarket.pages.ManageDeliveryBoyPage;
-import com.sevenrmartsupermarket.utilities.ExcelRead;
-import com.sevenrmartsupermarket.utilities.ScreenShot;
+import com.sevenrmartsupermarket.utilities.ExcelReadUtility;
+import com.sevenrmartsupermarket.utilities.ScreenShotUtility;
 
 public class ManageDeliveryBoyTest extends Base {
 
 	ManageDeliveryBoyPage manageDeliveryBoyPage;
 	LoginPage loginPage;
-	ExcelRead excelRead=new ExcelRead();
+	ExcelReadUtility excelRead=new ExcelReadUtility();
 	SoftAssert softassert=new SoftAssert();
 	Faker faker=new Faker();
 	
@@ -83,6 +83,7 @@ public class ManageDeliveryBoyTest extends Base {
 		String actualPassword=manageDeliveryBoyPage.getPasswordText();
 		softassert.assertEquals(actualPassword.substring(11), password);
 		softassert.assertTrue(manageDeliveryBoyPage.isSuccessMessageAlertDisplayed());
+		System.out.println(manageDeliveryBoyPage.getBackgroundColorOfSuccessMessageAlert());
 		softassert.assertAll();
 	}
 	

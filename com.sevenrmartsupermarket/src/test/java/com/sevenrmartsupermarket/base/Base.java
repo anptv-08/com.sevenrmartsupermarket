@@ -14,7 +14,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
 import com.sevenrmartsupermarket.constants.Constants;
-import com.sevenrmartsupermarket.utilities.ScreenShot;
+import com.sevenrmartsupermarket.utilities.ScreenShotUtility;
 import com.sevenrmartsupermarket.utilities.WaitUtility;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -24,7 +24,7 @@ public class Base {
 	public WebDriver driver;
 	Properties properties=new Properties();
 	FileInputStream ip;
-	ScreenShot screenShot=new ScreenShot();
+	ScreenShotUtility screenShot=new ScreenShotUtility();
 	
 	/** Initializing config file **/
 	
@@ -75,7 +75,7 @@ public class Base {
 		if(itestresult.getStatus()==ITestResult.FAILURE) {
 			screenShot.takeScreenShot(driver, itestresult.getName());
 		}
-	//	driver.close();
+		driver.close();
 	}
 
 }

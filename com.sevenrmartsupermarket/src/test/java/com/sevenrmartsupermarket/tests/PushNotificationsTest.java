@@ -7,13 +7,13 @@ import org.testng.asserts.SoftAssert;
 import com.sevenrmartsupermarket.base.Base;
 import com.sevenrmartsupermarket.pages.LoginPage;
 import com.sevenrmartsupermarket.pages.PushNotificationsPage;
-import com.sevenrmartsupermarket.utilities.ExcelRead;
+import com.sevenrmartsupermarket.utilities.ExcelReadUtility;
 
 public class PushNotificationsTest extends Base {
 
 	PushNotificationsPage pushNotificationsPage;
 	LoginPage loginPage;
-	ExcelRead excelRead=new ExcelRead();
+	ExcelReadUtility excelRead=new ExcelReadUtility();
 	SoftAssert softassert=new SoftAssert();;
 	
 	@Test(groups = "smoke")

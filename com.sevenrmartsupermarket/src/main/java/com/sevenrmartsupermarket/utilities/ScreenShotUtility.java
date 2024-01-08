@@ -11,7 +11,7 @@ import org.openqa.selenium.io.FileHandler;
 
 import com.sevenrmartsupermarket.constants.Constants;
 
-public class ScreenShot {
+public class ScreenShotUtility {
 	TakesScreenshot takesScreenShot;
 
 	public void takeScreenShot(WebDriver driver, String imageName) {
