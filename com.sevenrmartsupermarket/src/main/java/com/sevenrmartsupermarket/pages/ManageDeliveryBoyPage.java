@@ -118,6 +118,10 @@ public class ManageDeliveryBoyPage {
 	public void clearName() {
 		nameElement.clear();
 	}
+	
+	public void clearEmail() {
+		emailElement.clear();
+	}
 
 	public void sendDeliveryBoyData(String name, String email, String phone, String address, String username,
 			String password) {
@@ -142,7 +146,7 @@ public class ManageDeliveryBoyPage {
 		return generalUtility.get_Text(passwordDataElement);
 	}
 
-	public void editDeliveryBoy(String deliveryBoyName) {
+	public void editDeliveryBoyName(String deliveryBoyName) {
 		generalUtility = new GeneralUtility(driver);
 		pageUtility = new PageUtility(driver);
 		int index = 0;
@@ -158,6 +162,58 @@ public class ManageDeliveryBoyPage {
 				"//table[@class='table table-bordered table-hover table-sm']//tbody/tr[" + index + "]/td[8]//a[1]"));
 		pageUtility.scroll_AndClick(editDeliveryBoyElement);
 		clearName();
+	}
+	
+	public void editDeliveryBoyEmail(String deliveryBoyName) {
+		generalUtility = new GeneralUtility(driver);
+		pageUtility = new PageUtility(driver);
+		int index = 0;
+		List<String> names = new ArrayList<String>();
+		names = generalUtility.getTextOfElements(nameElements);
+		for (index = 0; index < names.size(); index++) {
+			if (deliveryBoyName.equals(names.get(index))) {
+				index++;
+				break;
+			}
+		}
+		WebElement editDeliveryBoyElement = driver.findElement(By.xpath(
+				"//table[@class='table table-bordered table-hover table-sm']//tbody/tr[" + index + "]/td[8]//a[1]"));
+		pageUtility.scroll_AndClick(editDeliveryBoyElement);
+		clearEmail();
+	}
+	
+	public String getNameText(String deliveryBoyName) {
+		generalUtility = new GeneralUtility(driver);
+		pageUtility = new PageUtility(driver);
+		int index = 0;
+		List<String> names = new ArrayList<String>();
+		names = generalUtility.getTextOfElements(nameElements);
+		for (index = 0; index < names.size(); index++) {
+			if (deliveryBoyName.equals(names.get(index))) {
+				index++;
+				break;
+			}
+		}
+		WebElement deliveryBoyNameElement=driver.findElement(By.xpath("//table[@class='table table-bordered table-hover table-sm']//tbody/tr["+index+"]//td[1]"));
+		return generalUtility.get_Text(deliveryBoyNameElement);
+	}
+	
+	public String getEmailText(String deliveryBoyName) {
+		generalUtility = new GeneralUtility(driver);
+		pageUtility = new PageUtility(driver);
+		int index = 0;
+		List<String> names = new ArrayList<String>();
+		names = generalUtility.getTextOfElements(nameElements);
+		for (index = 0; index < names.size(); index++) {
+			if (deliveryBoyName.equals(names.get(index))) {
+				index++;
+				break;
+			}
+		}
+		WebElement deliveryBoyEmailElement=driver.findElement(By.xpath("//table[@class='table table-bordered table-hover table-sm']//tbody/tr["+index+"]//td[2]"));
+		
+		System.out.println("Email: "+deliveryBoyEmailElement.getText());
+		return generalUtility.get_Text(deliveryBoyEmailElement);
 	}
 	
 	public boolean isSuccessMessageAlertDisplayed() {

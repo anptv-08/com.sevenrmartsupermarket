@@ -23,14 +23,33 @@ public class ManageDeliveryBoyTest extends Base {
 	
 	
 	@Test(groups="smoke")
-	public void verifyDeliverBoyEdit() {
+	public void verifyDeliverBoyEditName() {
 		loginPage=new LoginPage(driver);
 		manageDeliveryBoyPage=new ManageDeliveryBoyPage(driver);	
 		loginPage.login();
 		manageDeliveryBoyPage.clickOnManageDeliveryBoy();
-		manageDeliveryBoyPage.editDeliveryBoy("ShameenaPS");	
-		manageDeliveryBoyPage.enterName("Rahul");
+		manageDeliveryBoyPage.editDeliveryBoyName("name16");	
+		String actualName=faker.name().firstName();
+		manageDeliveryBoyPage.enterName(actualName);
 		manageDeliveryBoyPage.clickOnUpdateButton();
+		String expectedName=manageDeliveryBoyPage.getNameText(actualName);
+		softassert.assertEquals(actualName, expectedName);
+		softassert.assertAll();
+	}
+	
+	@Test(groups="smoke")
+	public void verifyDeliverBoyEditEmail() {
+		loginPage=new LoginPage(driver);
+		manageDeliveryBoyPage=new ManageDeliveryBoyPage(driver);	
+		loginPage.login();
+		manageDeliveryBoyPage.clickOnManageDeliveryBoy();
+		manageDeliveryBoyPage.editDeliveryBoyEmail("Elissa");	
+		String actualEmail=faker.name().firstName()+"@hotmail.com";
+		manageDeliveryBoyPage.enterEmail(actualEmail);
+		manageDeliveryBoyPage.clickOnUpdateButton();
+		String expectedEmail=manageDeliveryBoyPage.getEmailText("Elissa");
+		softassert.assertEquals(actualEmail, expectedEmail);
+		softassert.assertAll();
 	}
 	
 //	@Test(groups={"smoke","regresion"})
@@ -52,7 +71,7 @@ public class ManageDeliveryBoyTest extends Base {
 //		softassert.assertEquals(actualData.get(0), name);
 //		softassert.assertEquals(actualData.get(1), email);
 //		softassert.assertEquals(actualData.get(2), phone);
-//	//	softassert.assertEquals(actualData.get(3), address);
+//		softassert.assertEquals(actualData.get(3), address);
 //		softassert.assertEquals(actualData.get(4), username);
 //		softassert.assertTrue(manageDeliveryBoyPage.isSuccessMessageAlertDisplayed());
 //		softassert.assertAll();

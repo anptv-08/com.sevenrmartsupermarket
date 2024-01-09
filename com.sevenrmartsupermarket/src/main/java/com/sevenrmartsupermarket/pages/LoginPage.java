@@ -77,5 +77,10 @@ public class LoginPage {
 		generalUtility = new GeneralUtility(driver);
 		return generalUtility.get_Text(invalidAlertElement);
 	}
+	
+	public boolean isSignInButtonDisplayed() {
+		generalUtility=new GeneralUtility(driver);
+		return generalUtility.element_IsDisplayed(signInButton);
+	}
 
 }
