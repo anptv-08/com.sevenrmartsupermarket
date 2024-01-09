@@ -14,7 +14,7 @@ public class HomeTest extends Base {
 	HomePage homePage;
 	LoginPage loginPage;
 	SoftAssert softassert=new SoftAssert();
-	
+	 
 	@Test
 	public void verifyLogout() {
 		homePage=new HomePage(driver);
