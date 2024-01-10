@@ -17,16 +17,16 @@ public class HomePage {
 	LoginPage loginPage;
 	
 	@FindBy(xpath="//a[@class='d-block']")
-	WebElement profileName;
+	private WebElement profileName;
 	
 	@FindBy(xpath="//li[@class='nav-item dropdown']//a[@class='nav-link']")
-	WebElement profileSettingsElement;
+	private WebElement profileSettingsElement;
 	
 	@FindBy(xpath="(//a[@class='dropdown-item'])[2]")
-	WebElement logoutElement;
+	private WebElement logoutElement;
 	
 	@FindBy(xpath="//div[@class='small-box bg-info']//div[@class='inner']//p")
-	List<WebElement> dashBoardElements;
+	private List<WebElement> dashBoardElements;
 	
 	public HomePage(WebDriver driver) {
 		this.driver=driver;

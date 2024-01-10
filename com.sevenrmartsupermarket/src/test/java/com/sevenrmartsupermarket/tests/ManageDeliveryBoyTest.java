@@ -23,17 +23,32 @@ public class ManageDeliveryBoyTest extends Base {
 	
 	
 	@Test(groups="smoke")
-	public void verifyDeliverBoyEditName() {
+	public void verifyDeliverBoyEditUserName() {
 		loginPage=new LoginPage(driver);
 		manageDeliveryBoyPage=new ManageDeliveryBoyPage(driver);	
 		loginPage.login();
 		manageDeliveryBoyPage.clickOnManageDeliveryBoy();
-		manageDeliveryBoyPage.editDeliveryBoyName("name16");	
-		String actualName=faker.name().firstName();
-		manageDeliveryBoyPage.enterName(actualName);
+		manageDeliveryBoyPage.editDeliveryBoyUserName("George Bayer V");	
+		String actualUserName=faker.name().firstName()+"23";
+		manageDeliveryBoyPage.enterUserName(actualUserName);
 		manageDeliveryBoyPage.clickOnUpdateButton();
-		String expectedName=manageDeliveryBoyPage.getNameText(actualName);
-		softassert.assertEquals(actualName, expectedName);
+		String expectedName=manageDeliveryBoyPage.getNameText("George Bayer V");
+		softassert.assertEquals(actualUserName, expectedName);
+		softassert.assertTrue(manageDeliveryBoyPage.isSuccessMessageAlertDisplayed());
+		softassert.assertAll();
+	}
+	
+	@Test(groups="smoke")
+	public void verifyDeliverBoyEditWithPhoneNumberFieldEmpty() {
+		loginPage=new LoginPage(driver);
+		manageDeliveryBoyPage=new ManageDeliveryBoyPage(driver);	
+		loginPage.login();
+		manageDeliveryBoyPage.clickOnManageDeliveryBoy();
+		manageDeliveryBoyPage.editDeliveryBoyPhoneNumber("George Bayer V");	
+		String expectedAlertMessageText="The Phone Number field is required.";
+		String actualAlertMessageText=manageDeliveryBoyPage.phoneNumberRequiredFieldWarningAlertMessageText();
+		softassert.assertTrue(manageDeliveryBoyPage.isWarningAlertDisplayed());
+		softassert.assertEquals(actualAlertMessageText, expectedAlertMessageText);
 		softassert.assertAll();
 	}
 	
@@ -49,33 +64,9 @@ public class ManageDeliveryBoyTest extends Base {
 		manageDeliveryBoyPage.clickOnUpdateButton();
 		String expectedEmail=manageDeliveryBoyPage.getEmailText("Elissa");
 		softassert.assertEquals(actualEmail, expectedEmail);
+		softassert.assertTrue(manageDeliveryBoyPage.isSuccessMessageAlertDisplayed());
 		softassert.assertAll();
 	}
-	
-//	@Test(groups={"smoke","regresion"})
-//	public void verifyCreatingNewDeliveryBoy() {
-//		loginPage=new LoginPage(driver);
-//		manageDeliveryBoyPage=new ManageDeliveryBoyPage(driver);	
-//		loginPage.login();
-//		manageDeliveryBoyPage.clickOnManageDeliveryBoy();
-//		manageDeliveryBoyPage.clickOnCreateNewDeliveryBoy();
-//		excelRead.setExcelFile("CreateDeliveryBoy", "Vaid Delivery Boy");
-//		String name=excelRead.getCellData(8, 0);
-//		String email=excelRead.getCellData(8, 1);
-//		String phone=excelRead.getCellData(8, 2);
-//		String address=excelRead.getCellData(8, 3);
-//		String username=excelRead.getCellData(8, 4);
-//		String password=excelRead.getCellData(8, 5);
-//		manageDeliveryBoyPage.sendDeliveryBoyData(name, email, phone, address, username, password);
-//		List<String> actualData=manageDeliveryBoyPage.getDeliveryBoyDetails();
-//		softassert.assertEquals(actualData.get(0), name);
-//		softassert.assertEquals(actualData.get(1), email);
-//		softassert.assertEquals(actualData.get(2), phone);
-//		softassert.assertEquals(actualData.get(3), address);
-//		softassert.assertEquals(actualData.get(4), username);
-//		softassert.assertTrue(manageDeliveryBoyPage.isSuccessMessageAlertDisplayed());
-//		softassert.assertAll();
-//	}
 	
 	@Test(groups={"smoke","regresion"})
 	public void verifyCreatingNewDeliveryBoy1() {
@@ -84,15 +75,12 @@ public class ManageDeliveryBoyTest extends Base {
 		loginPage.login();
 		manageDeliveryBoyPage.clickOnManageDeliveryBoy();
 		manageDeliveryBoyPage.clickOnCreateNewDeliveryBoy();
-		String name = faker.name().fullName();
-//		String firstName = faker.name().firstName();
-//		String lastName = faker.name().lastName();
-		String email=faker.name().firstName()+"@gmail.com";
-		String phone=Long.toString(faker.number().randomNumber(10, false));
-		System.out.println(phone);
-		String username=faker.name().firstName()+"2023";
-		String password=faker.name().lastName()+"123";
-		String address = faker.address().streetAddress();
+		String name = manageDeliveryBoyPage.getRandomName();
+		String email=manageDeliveryBoyPage.getRandomEmail();
+		String phone=manageDeliveryBoyPage.getRandomPhoneNumber();
+		String username=manageDeliveryBoyPage.getRandomUserName();
+		String password=manageDeliveryBoyPage.getRandomPassword();
+		String address = manageDeliveryBoyPage.getRandomAddress();
 		manageDeliveryBoyPage.sendDeliveryBoyData(name, email, phone, address, username, password);
 		List<String> actualData=manageDeliveryBoyPage.getDeliveryBoyDetails();
 		softassert.assertEquals(actualData.get(0), name);

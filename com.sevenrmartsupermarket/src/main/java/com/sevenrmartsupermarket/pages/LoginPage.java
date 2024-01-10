@@ -19,16 +19,16 @@ public class LoginPage {
 	FileInputStream ip;
 
 	@FindBy(xpath = "//input[@name='username']")
-	WebElement userNameElement;
+	private WebElement userNameElement;
 
 	@FindBy(xpath = "//input[@name='password']")
-	WebElement passwordElement;
+	private WebElement passwordElement;
 
 	@FindBy(xpath = "//button[text()='Sign In']")
-	WebElement signInButton;
+	private WebElement signInButton;
 
 	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
-	WebElement invalidAlertElement;
+	private WebElement invalidAlertElement;
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;

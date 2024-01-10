@@ -19,51 +19,55 @@ public class ManageDeliveryBoyPage {
 	PageUtility pageUtility;
 
 	@FindBy(xpath = "//ul[@class='nav nav-pills nav-sidebar flex-column']//li[13]")
-	WebElement manageDeliveryBoyElement;
+	private WebElement manageDeliveryBoyElement;
 
 	@FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[1]")
-	List<WebElement> nameElements;
+	private List<WebElement> nameElements;
 
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
-	WebElement createNewDeliveryBoyElement;
+	private WebElement createNewDeliveryBoyElement;
 	
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
-	WebElement successAlertMessage;
+	private WebElement successAlertMessage;
+	
+	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")
+	private WebElement warningAlertMessage;
 
 	@FindBy(xpath = "//input[@id='name']")
-	WebElement nameElement;
+	private WebElement nameElement;
 
 	@FindBy(xpath = "//input[@id='email']")
-	WebElement emailElement;
+	private WebElement emailElement;
 
 	@FindBy(xpath = "//input[@id='phone']")
-	WebElement phoneElement;
+	private WebElement phoneElement;
 
 	@FindBy(xpath = "//textarea[@id='address']")
-	WebElement addressElement;
+	private WebElement addressElement;
 
 	@FindBy(xpath = "//input[@id='username']")
-	WebElement usernameElement;
+	private WebElement usernameElement;
 
 	@FindBy(xpath = "//input[@id='password']")
-	WebElement passwordElement;
+	private WebElement passwordElement;
 
 	@FindBy(xpath = "//button[@class='btn btn-danger']")
-	WebElement saveButton;
+	private WebElement saveButton;
 	
 	@FindBy(xpath="//button[@class='btn btn-danger']")
-	WebElement updateButton;
+	private WebElement updateButton;
 	
 	@FindBy(xpath="(//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td[7]//a[1])[1]")
-	WebElement showPasswordElement;
+	private WebElement showPasswordElement;
 	
 	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//tbody//tr[2]//td")
-	WebElement passwordDataElement;
+	private WebElement passwordDataElement;
 	
-	
+	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']//div[@class='errors']//li")
+	private WebElement phoneNumberRequiredFiledWarningAlert;
 	
 	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//tbody//tr[1]//td")
-	List<WebElement> deliveryBoyRowDataElement;
+	private List<WebElement> deliveryBoyRowDataElement;
 
 	public ManageDeliveryBoyPage(WebDriver driver) {
 		this.driver = driver;
@@ -122,6 +126,43 @@ public class ManageDeliveryBoyPage {
 	public void clearEmail() {
 		emailElement.clear();
 	}
+	public void clearUserName() {
+		usernameElement.clear();
+	}
+	
+	public void clearPhoneNumber() {
+		phoneElement.clear();
+	}
+	
+	public String getRandomName() {
+		generalUtility=new GeneralUtility(driver);
+		return generalUtility.generateRandomName();
+	}
+	
+	public String getRandomEmail() {
+		generalUtility=new GeneralUtility(driver);
+		return generalUtility.generateRandomEmail();
+	}
+	
+	public String getRandomPhoneNumber() {
+		generalUtility=new GeneralUtility(driver);
+		return generalUtility.generateRandomPhoneNumber();
+	}
+	
+	public String getRandomAddress() {
+		generalUtility=new GeneralUtility(driver);
+		return generalUtility.generateRandomAddress();
+	}
+	
+	public String getRandomUserName() {
+		generalUtility=new GeneralUtility(driver);
+		return generalUtility.generateRandomUserName();
+	}
+	
+	public String getRandomPassword() {
+		generalUtility=new GeneralUtility(driver);
+		return generalUtility.generateRandomPassword();
+	}
 
 	public void sendDeliveryBoyData(String name, String email, String phone, String address, String username,
 			String password) {
@@ -132,6 +173,12 @@ public class ManageDeliveryBoyPage {
 		enterUserName(username);
 		enterPassword(password);
 		clickOnSaveButton();
+	}
+	
+	public String phoneNumberRequiredFieldWarningAlertMessageText() {
+		generalUtility=new GeneralUtility(driver);
+		clickOnUpdateButton();
+		return generalUtility.get_Text(phoneNumberRequiredFiledWarningAlert);	
 	}
 	
 	public List<String> getDeliveryBoyDetails() {
@@ -146,7 +193,7 @@ public class ManageDeliveryBoyPage {
 		return generalUtility.get_Text(passwordDataElement);
 	}
 
-	public void editDeliveryBoyName(String deliveryBoyName) {
+	public void editDeliveryBoyUserName(String deliveryBoyName) {
 		generalUtility = new GeneralUtility(driver);
 		pageUtility = new PageUtility(driver);
 		int index = 0;
@@ -161,7 +208,7 @@ public class ManageDeliveryBoyPage {
 		WebElement editDeliveryBoyElement = driver.findElement(By.xpath(
 				"//table[@class='table table-bordered table-hover table-sm']//tbody/tr[" + index + "]/td[8]//a[1]"));
 		pageUtility.scroll_AndClick(editDeliveryBoyElement);
-		clearName();
+		clearUserName();
 	}
 	
 	public void editDeliveryBoyEmail(String deliveryBoyName) {
@@ -182,6 +229,24 @@ public class ManageDeliveryBoyPage {
 		clearEmail();
 	}
 	
+	public void editDeliveryBoyPhoneNumber(String deliveryBoyName) {
+		generalUtility = new GeneralUtility(driver);
+		pageUtility = new PageUtility(driver);
+		int index = 0;
+		List<String> names = new ArrayList<String>();
+		names = generalUtility.getTextOfElements(nameElements);
+		for (index = 0; index < names.size(); index++) {
+			if (deliveryBoyName.equals(names.get(index))) {
+				index++;
+				break;
+			}
+		}
+		WebElement editDeliveryBoyElement = driver.findElement(By.xpath(
+				"//table[@class='table table-bordered table-hover table-sm']//tbody/tr[" + index + "]/td[8]//a[1]"));
+		pageUtility.scroll_AndClick(editDeliveryBoyElement);
+		clearPhoneNumber();
+	}
+	
 	public String getNameText(String deliveryBoyName) {
 		generalUtility = new GeneralUtility(driver);
 		pageUtility = new PageUtility(driver);
@@ -194,7 +259,7 @@ public class ManageDeliveryBoyPage {
 				break;
 			}
 		}
-		WebElement deliveryBoyNameElement=driver.findElement(By.xpath("//table[@class='table table-bordered table-hover table-sm']//tbody/tr["+index+"]//td[1]"));
+		WebElement deliveryBoyNameElement=driver.findElement(By.xpath("//table[@class='table table-bordered table-hover table-sm']//tbody/tr["+index+"]//td[5]"));
 		return generalUtility.get_Text(deliveryBoyNameElement);
 	}
 	
@@ -219,6 +284,11 @@ public class ManageDeliveryBoyPage {
 	public boolean isSuccessMessageAlertDisplayed() {
 		generalUtility=new GeneralUtility(driver);
 		return generalUtility.element_IsDisplayed(successAlertMessage);
+	}
+	
+	public boolean isWarningAlertDisplayed() {
+		generalUtility=new GeneralUtility(driver);
+		return generalUtility.element_IsDisplayed(warningAlertMessage);
 	}
 	
 	public String getBackgroundColorOfSuccessMessageAlert() {

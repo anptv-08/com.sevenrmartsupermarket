@@ -6,11 +6,46 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import com.github.javafaker.Faker;
+
 public class GeneralUtility {
 	WebDriver driver;
+	Faker faker=new Faker();
 
 	public GeneralUtility(WebDriver driver) {
 		this.driver = driver;
+	}
+	
+	public String generateRandomName() {
+		return faker.name().fullName();
+	}
+	
+	public String generateRandomFirstName() {
+		return faker.name().firstName();
+	}
+	
+	public String generateRandomLastName() {
+		return faker.name().lastName();
+	}
+	
+	public String generateRandomAddress() {
+		return faker.address().streetAddress();
+	}
+	
+	public String generateRandomPhoneNumber() {
+		return Long.toString(faker.number().randomNumber(10, false));
+	}
+	
+	public String generateRandomEmail() {
+		return faker.name().firstName()+"@gmail.com";
+	}
+	
+	public String generateRandomUserName() {
+		return faker.name().firstName()+"2023";
+	}
+	
+	public String generateRandomPassword() {
+		return faker.name().lastName()+"123";
 	}
 
 	public String get_Attribute(WebElement element, String attribute) {

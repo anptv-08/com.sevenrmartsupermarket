@@ -14,19 +14,19 @@ public class PushNotificationsPage {
 	GeneralUtility generalUtility;
 	
 	@FindBy(xpath="//ul[@class='nav nav-pills nav-sidebar flex-column']//li[6]")
-	WebElement pushNotificationsElement;
+	private WebElement pushNotificationsElement;
 	
 	@FindBy(xpath="//input[@id='title']")
-	WebElement titleElement;
+	private WebElement titleElement;
 	
 	@FindBy(xpath="//input[@id='description']")
-	WebElement descriptionElement;
+	private WebElement descriptionElement;
 	
 	@FindBy(xpath="//button[@class='btn btn-block-sm btn-info']")
-	WebElement sendButton;
+	private WebElement sendButton;
 	
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
-	WebElement successAlertElement;
+	private WebElement successAlertElement;
 	
 	public PushNotificationsPage(WebDriver driver) {
 		this.driver=driver;
