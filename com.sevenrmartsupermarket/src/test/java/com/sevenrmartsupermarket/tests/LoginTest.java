@@ -16,7 +16,7 @@ public class LoginTest extends Base {
 	LoginPage loginPage;
 	HomePage homePage;
 	ExcelReadUtility excelRead = new ExcelReadUtility();
-	Faker faker = new Faker();
+	Faker faker = new Faker(); 
 
 	@Test(groups = "regression", retryAnalyzer = RetryAnalyzer.class)
 	public void verifyLogin() {
