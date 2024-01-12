@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [multipleTestSuite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.sevenrmartsupermarket.listeners.ExtentReporter"/>
+  </listeners>
+  <test thread-count="5" parallel="tests" name="Regression Testing(failed)">
+    <classes>
+      <class name="com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="verifyCreatingNewDeliveryBoy"/>
+          <include name="verifyDeliverBoyEdit"/>
+          <include name="terminateSession"/>
+        </methods>
+      </class> <!-- com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest -->
+    </classes>
+  </test> <!-- Regression Testing(failed) -->
+</suite> <!-- Failed suite [multipleTestSuite] -->
