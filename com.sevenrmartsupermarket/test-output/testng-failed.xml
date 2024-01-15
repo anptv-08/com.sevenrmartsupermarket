@@ -5,10 +5,10 @@
     <classes>
       <class name="com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest">
         <methods>
+          <include name="verifyDeliverBoyEditPhoneNumber"/>
           <include name="launchBrowser"/>
           <include name="launchBrowser"/>
           <include name="terminateSession"/>
-          <include name="verifyDeliverBoyEditWithPhoneNumberFieldEmpty"/>
         </methods>
       </class> <!-- com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest -->
     </classes>

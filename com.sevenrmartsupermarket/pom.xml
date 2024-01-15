@@ -5,7 +5,10 @@
 	<groupId>com.sevenrmartsupermarket</groupId>
 	<artifactId>com.sevenrmartsupermarket</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -65,6 +68,11 @@
 			<groupId>com.github.javafaker</groupId>
 			<artifactId>javafaker</artifactId>
 			<version>0.12</version>
+		</dependency>
+		<dependency>
+    		<groupId>com.github.virtuald</groupId>
+   			<artifactId>curvesapi</artifactId>
+    		<version>1.06</version>
 		</dependency>
 
 	</dependencies>
