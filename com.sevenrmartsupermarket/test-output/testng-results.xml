@@ -1,39 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-15T17:52:56 IST" name="Group Execution" finished-at="2024-01-15T17:53:58 IST" duration-ms="61969">
+  <suite started-at="2024-01-15T21:37:23 IST" name="Default suite" finished-at="2024-01-15T21:37:33 IST" duration-ms="9635">
     <groups>
-      <group name="regresion">
-        <method signature="ManageDeliveryBoyTest.verifyCreatingNewDeliveryBoy1()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" name="verifyCreatingNewDeliveryBoy1" class="com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest"/>
-      </group> <!-- regresion -->
       <group name="regression">
-        <method signature="LoginTest.verifyLogin()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@6810465]" name="verifyLogin" class="com.sevenrmartsupermarket.tests.LoginTest"/>
+        <method signature="LoginTest.verifyLogin()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@12c76d6e]" name="verifyLogin" class="com.sevenrmartsupermarket.tests.LoginTest"/>
       </group> <!-- regression -->
-      <group name="smoke">
-        <method signature="ManageDeliveryBoyTest.verifyCreatingNewDeliveryBoy1()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" name="verifyCreatingNewDeliveryBoy1" class="com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest"/>
-        <method signature="ManageDeliveryBoyTest.verifyDeliverBoyEditEmail()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" name="verifyDeliverBoyEditEmail" class="com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest"/>
-        <method signature="ManageDeliveryBoyTest.verifyDeliverBoyEditPhoneNumber()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" name="verifyDeliverBoyEditPhoneNumber" class="com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest"/>
-        <method signature="ManageDeliveryBoyTest.verifyDeliverBoyEditUserName()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" name="verifyDeliverBoyEditUserName" class="com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest"/>
-        <method signature="ManageDeliveryBoyTest.verifyDeliverBoyEditWithPhoneNumberFieldEmpty()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" name="verifyDeliverBoyEditWithPhoneNumberFieldEmpty" class="com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest"/>
-        <method signature="PushNotificationsTest.verifyPushNotificationMessage()[pri:0, instance:com.sevenrmartsupermarket.tests.PushNotificationsTest@158a8276]" name="verifyPushNotificationMessage" class="com.sevenrmartsupermarket.tests.PushNotificationsTest"/>
-      </group> <!-- smoke -->
     </groups>
-    <test started-at="2024-01-15T17:52:56 IST" name="Regression" finished-at="2024-01-15T17:53:04 IST" duration-ms="7901">
+    <test started-at="2024-01-15T21:37:23 IST" name="Default test" finished-at="2024-01-15T21:37:33 IST" duration-ms="9635">
       <class name="com.sevenrmartsupermarket.tests.LoginTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@6810465]" started-at="2024-01-15T17:52:56 IST" name="launchBrowser" finished-at="2024-01-15T17:53:02 IST" duration-ms="6041" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@12c76d6e]" started-at="2024-01-15T21:37:23 IST" name="launchBrowser" finished-at="2024-01-15T21:37:31 IST" duration-ms="7454" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyLogin()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@6810465]" started-at="2024-01-15T17:53:02 IST" name="verifyLogin" finished-at="2024-01-15T17:53:04 IST" duration-ms="1604" status="PASS">
+        <test-method signature="verifyLogin()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@12c76d6e]" started-at="2024-01-15T21:37:31 IST" name="verifyLogin" finished-at="2024-01-15T21:37:33 IST" duration-ms="1942" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLogin -->
-        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@6810465]" started-at="2024-01-15T17:53:04 IST" name="terminateSession" finished-at="2024-01-15T17:53:04 IST" duration-ms="186" status="PASS">
+        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@12c76d6e]" started-at="2024-01-15T21:37:33 IST" name="terminateSession" finished-at="2024-01-15T21:37:33 IST" duration-ms="124" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyLogin status=SUCCESS method=LoginTest.verifyLogin()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@6810465] output={null}]]]>
+                <![CDATA[[TestResult name=verifyLogin status=SUCCESS method=LoginTest.verifyLogin()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@12c76d6e] output={null}]]]>
               </value>
             </param>
           </params>
@@ -41,126 +30,6 @@
           </reporter-output>
         </test-method> <!-- terminateSession -->
       </class> <!-- com.sevenrmartsupermarket.tests.LoginTest -->
-    </test> <!-- Regression -->
-    <test started-at="2024-01-15T17:52:56 IST" name="Smoke" finished-at="2024-01-15T17:53:58 IST" duration-ms="61969">
-      <class name="com.sevenrmartsupermarket.tests.PushNotificationsTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.PushNotificationsTest@158a8276]" started-at="2024-01-15T17:52:56 IST" name="launchBrowser" finished-at="2024-01-15T17:53:02 IST" duration-ms="6097" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyPushNotificationMessage()[pri:0, instance:com.sevenrmartsupermarket.tests.PushNotificationsTest@158a8276]" started-at="2024-01-15T17:53:02 IST" name="verifyPushNotificationMessage" finished-at="2024-01-15T17:53:07 IST" duration-ms="4415" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyPushNotificationMessage -->
-        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.PushNotificationsTest@158a8276]" started-at="2024-01-15T17:53:07 IST" name="terminateSession" finished-at="2024-01-15T17:53:07 IST" duration-ms="100" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyPushNotificationMessage status=SUCCESS method=PushNotificationsTest.verifyPushNotificationMessage()[pri:0, instance:com.sevenrmartsupermarket.tests.PushNotificationsTest@158a8276] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- terminateSession -->
-      </class> <!-- com.sevenrmartsupermarket.tests.PushNotificationsTest -->
-      <class name="com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" started-at="2024-01-15T17:53:07 IST" name="launchBrowser" finished-at="2024-01-15T17:53:10 IST" duration-ms="3072" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyCreatingNewDeliveryBoy1()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" started-at="2024-01-15T17:53:10 IST" name="verifyCreatingNewDeliveryBoy1" finished-at="2024-01-15T17:53:15 IST" duration-ms="5037" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCreatingNewDeliveryBoy1 -->
-        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" started-at="2024-01-15T17:53:15 IST" name="terminateSession" finished-at="2024-01-15T17:53:15 IST" duration-ms="103" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCreatingNewDeliveryBoy1 status=SUCCESS method=ManageDeliveryBoyTest.verifyCreatingNewDeliveryBoy1()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- terminateSession -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" started-at="2024-01-15T17:53:15 IST" name="launchBrowser" finished-at="2024-01-15T17:53:18 IST" duration-ms="3219" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyDeliverBoyEditEmail()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" started-at="2024-01-15T17:53:18 IST" name="verifyDeliverBoyEditEmail" finished-at="2024-01-15T17:53:26 IST" duration-ms="8376" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDeliverBoyEditEmail -->
-        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" started-at="2024-01-15T17:53:26 IST" name="terminateSession" finished-at="2024-01-15T17:53:27 IST" duration-ms="106" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyDeliverBoyEditEmail status=SUCCESS method=ManageDeliveryBoyTest.verifyDeliverBoyEditEmail()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- terminateSession -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" started-at="2024-01-15T17:53:27 IST" name="launchBrowser" finished-at="2024-01-15T17:53:30 IST" duration-ms="3297" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyDeliverBoyEditPhoneNumber()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" started-at="2024-01-15T17:53:30 IST" name="verifyDeliverBoyEditPhoneNumber" finished-at="2024-01-15T17:53:38 IST" duration-ms="8050" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDeliverBoyEditPhoneNumber -->
-        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" started-at="2024-01-15T17:53:38 IST" name="terminateSession" finished-at="2024-01-15T17:53:38 IST" duration-ms="77" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyDeliverBoyEditPhoneNumber status=SUCCESS method=ManageDeliveryBoyTest.verifyDeliverBoyEditPhoneNumber()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- terminateSession -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" started-at="2024-01-15T17:53:38 IST" name="launchBrowser" finished-at="2024-01-15T17:53:41 IST" duration-ms="3259" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyDeliverBoyEditUserName()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" started-at="2024-01-15T17:53:41 IST" name="verifyDeliverBoyEditUserName" finished-at="2024-01-15T17:53:48 IST" duration-ms="6991" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDeliverBoyEditUserName -->
-        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" started-at="2024-01-15T17:53:48 IST" name="terminateSession" finished-at="2024-01-15T17:53:48 IST" duration-ms="97" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyDeliverBoyEditUserName status=SUCCESS method=ManageDeliveryBoyTest.verifyDeliverBoyEditUserName()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- terminateSession -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" started-at="2024-01-15T17:53:48 IST" name="launchBrowser" finished-at="2024-01-15T17:53:52 IST" duration-ms="3236" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyDeliverBoyEditWithPhoneNumberFieldEmpty()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" started-at="2024-01-15T17:53:52 IST" name="verifyDeliverBoyEditWithPhoneNumberFieldEmpty" finished-at="2024-01-15T17:53:58 IST" duration-ms="6294" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDeliverBoyEditWithPhoneNumberFieldEmpty -->
-        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96]" started-at="2024-01-15T17:53:58 IST" name="terminateSession" finished-at="2024-01-15T17:53:58 IST" duration-ms="73" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyDeliverBoyEditWithPhoneNumberFieldEmpty status=SUCCESS method=ManageDeliveryBoyTest.verifyDeliverBoyEditWithPhoneNumberFieldEmpty()[pri:0, instance:com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest@3e28dc96] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- terminateSession -->
-      </class> <!-- com.sevenrmartsupermarket.tests.ManageDeliveryBoyTest -->
-    </test> <!-- Smoke -->
-  </suite> <!-- Group Execution -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

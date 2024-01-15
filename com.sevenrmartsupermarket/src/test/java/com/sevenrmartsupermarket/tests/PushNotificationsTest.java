@@ -30,4 +30,7 @@ public class PushNotificationsTest extends Base {
 		softassert.assertAll();
 		
 	}
+	
+	@Test(groups = "smoke")
+	public void verify() {}
 }
