@@ -11,7 +11,7 @@ import com.sevenrmartsupermarket.base.Base;
 import com.sevenrmartsupermarket.pages.LoginPage;
 import com.sevenrmartsupermarket.pages.ManageDeliveryBoyPage;
 import com.sevenrmartsupermarket.utilities.ExcelReadUtility;
-import com.sevenrmartsupermarket.utilities.ScreenShotUtility;
+
 
 public class ManageDeliveryBoyTest extends Base {
 
@@ -20,7 +20,7 @@ public class ManageDeliveryBoyTest extends Base {
 	ExcelReadUtility excelRead=new ExcelReadUtility();
 	SoftAssert softassert=new SoftAssert();
 	Faker faker=new Faker();
-	
+	 
 	
 	@Test(groups="smoke")
 	public void verifyDeliverBoyEditUserName() {
@@ -29,14 +29,14 @@ public class ManageDeliveryBoyTest extends Base {
 		loginPage.login();
 		manageDeliveryBoyPage.clickOnManageDeliveryBoy();
 		manageDeliveryBoyPage.editDeliveryBoyUserName("George Bayer V");	
-		String actualUserName=faker.name().firstName()+"23";
+		String actualUserName=manageDeliveryBoyPage.getRandomUserName();
 		manageDeliveryBoyPage.enterUserName(actualUserName);
 		manageDeliveryBoyPage.clickOnUpdateButton();
 		String expectedName=manageDeliveryBoyPage.getNameText("George Bayer V");
 		softassert.assertEquals(actualUserName, expectedName);
 		softassert.assertTrue(manageDeliveryBoyPage.isSuccessMessageAlertDisplayed());
 		softassert.assertAll();
-	}
+	} 
 	
 	@Test(groups="smoke")
 	public void verifyDeliverBoyEditWithPhoneNumberFieldEmpty() {
@@ -59,11 +59,27 @@ public class ManageDeliveryBoyTest extends Base {
 		loginPage.login();
 		manageDeliveryBoyPage.clickOnManageDeliveryBoy();
 		manageDeliveryBoyPage.editDeliveryBoyEmail("Elissa");	
-		String actualEmail=faker.name().firstName()+"@hotmail.com";
+		String actualEmail=manageDeliveryBoyPage.getRandomEmail();
 		manageDeliveryBoyPage.enterEmail(actualEmail);
 		manageDeliveryBoyPage.clickOnUpdateButton();
 		String expectedEmail=manageDeliveryBoyPage.getEmailText("Elissa");
 		softassert.assertEquals(actualEmail, expectedEmail);
+		softassert.assertTrue(manageDeliveryBoyPage.isSuccessMessageAlertDisplayed());
+		softassert.assertAll();
+	} 
+	
+	@Test(groups="smoke")
+	public void verifyDeliverBoyEditPhoneNumber() {
+		loginPage=new LoginPage(driver);
+		manageDeliveryBoyPage=new ManageDeliveryBoyPage(driver);	
+		loginPage.login();
+		manageDeliveryBoyPage.clickOnManageDeliveryBoy();
+		manageDeliveryBoyPage.editDeliveryBoyPhoneNumber("Elissa");	
+		String actualPhoneNumber=manageDeliveryBoyPage.getRandomPhoneNumber();
+		manageDeliveryBoyPage.enterPhoneNumber(actualPhoneNumber);
+		manageDeliveryBoyPage.clickOnUpdateButton();
+		String expectedPhonenumber=manageDeliveryBoyPage.getPhoneNumberText("Elissa");
+		softassert.assertEquals(actualPhoneNumber, expectedPhonenumber);
 		softassert.assertTrue(manageDeliveryBoyPage.isSuccessMessageAlertDisplayed());
 		softassert.assertAll();
 	}
