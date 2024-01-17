@@ -19,7 +19,6 @@ public class LoginPage {
 	GeneralUtility generalUtility;
 	Properties properties = new Properties();
 	FileInputStream ip;
-	WaitUtility waitUtility;
 
 	@FindBy(xpath = "//input[@name='username']")
 	private WebElement userNameElement;
@@ -54,14 +53,12 @@ public class LoginPage {
 	}
 
 	public void clickOnSignInButton() {
-		waitUtility=new WaitUtility();
-		waitUtility.waitForButtonToBeClickable(driver, signInButton);
+		WaitUtility.waitForButtonToBeClickable(driver, signInButton);
 		signInButton.click();
 	}
 
 	public void login() {
-		waitUtility=new WaitUtility();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitUtility.IMPLICIT_WAIT));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICIT_WAIT));
 		String userName = properties.getProperty("username");
 		String password = properties.getProperty("password");
 		enterUserName(userName);
@@ -70,30 +67,26 @@ public class LoginPage {
 	}
 
 	public void login(String username, String password) {
-		waitUtility=new WaitUtility();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(waitUtility.IMPLICIT_WAIT));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICIT_WAIT));
 		enterUserName(username);
 		enterPassword(password);
 		clickOnSignInButton();
 	}
 
 	public boolean isInvalidAlertWindowDisplayed() {
-		waitUtility=new WaitUtility();
-		waitUtility.waitForVisibilityOfElement(driver, "//div[@class='alert alert-danger alert-dismissible']");
+		WaitUtility.waitForVisibilityOfElement(driver, "//div[@class='alert alert-danger alert-dismissible']");
 		generalUtility = new GeneralUtility(driver);
 		return generalUtility.element_IsDisplayed(invalidAlertElement);
 	}
 
 	public String getInvalidAlertWindowText() {
-		waitUtility=new WaitUtility();
-		waitUtility.waitForVisibilityOfElement(driver, "//div[@class='alert alert-danger alert-dismissible']");
+		WaitUtility.waitForVisibilityOfElement(driver, "//div[@class='alert alert-danger alert-dismissible']");
 		generalUtility = new GeneralUtility(driver);
 		return generalUtility.get_Text(invalidAlertElement);
 	}
 	
 	public boolean isSignInButtonDisplayed() {
-		waitUtility=new WaitUtility();
-		waitUtility.waitForVisibilityOfElement(driver, "//button[text()='Sign In']");
+		WaitUtility.waitForVisibilityOfElement(driver, "//button[text()='Sign In']");
 		generalUtility=new GeneralUtility(driver);
 		return generalUtility.element_IsDisplayed(signInButton);
 	}
