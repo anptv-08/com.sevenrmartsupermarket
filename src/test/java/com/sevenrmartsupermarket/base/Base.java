@@ -30,7 +30,6 @@ public class Base {
 	
 	public Base() {
 		try {
-			System.out.println(Constants.CONFIG_FILE_PATH);
 			ip=new FileInputStream(Constants.CONFIG_FILE_PATH);
 			properties.load(ip);
 			
