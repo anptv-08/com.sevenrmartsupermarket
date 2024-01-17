@@ -2,9 +2,7 @@ package com.sevenrmartsupermarket.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
-import com.github.javafaker.Faker;
 import com.sevenrmartsupermarket.base.Base;
 import com.sevenrmartsupermarket.listeners.RetryAnalyzer;
 import com.sevenrmartsupermarket.pages.HomePage;
@@ -16,7 +14,7 @@ public class LoginTest extends Base {
 	LoginPage loginPage;
 	HomePage homePage;
 	ExcelReadUtility excelRead = new ExcelReadUtility();
-	Faker faker = new Faker(); 
+
 	
 	@Test(groups = "regression", retryAnalyzer = RetryAnalyzer.class)
 	public void verifyLogin() {
@@ -30,12 +28,16 @@ public class LoginTest extends Base {
 	}
 
 	@Test(groups = "smoke")
-	public void excelRead() {
+	public void verifyLoginUsingExcelRead() {
+		loginPage = new LoginPage(driver);
+		homePage = new HomePage(driver);
 		excelRead.setExcelFile("LoginCredentials", "Valid Login Credentials"); // Workbookname & sheetName
 		String username1 = excelRead.getCellData(1, 0);
 		String password1 = excelRead.getCellData(1, 1);
-		System.out.println(username1);
-		System.out.println(password1);
+		loginPage.login(username1,password1);
+		String actualProfileName = homePage.getProfileName();
+		String expectedProfileName="Jithu";
+		Assert.assertEquals(actualProfileName, expectedProfileName);
 	}
 
 	@Test(dataProvider = "SevenMart SuperMarket Valid Login", dataProviderClass = com.sevenrmartsupermarket.base.Data_Provider.class)
