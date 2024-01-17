@@ -10,6 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.sevenrmartsupermarket.utilities.GeneralUtility;
 import com.sevenrmartsupermarket.utilities.PageUtility;
+import com.sevenrmartsupermarket.utilities.WaitUtility;
 
 public class HomePage {
 	WebDriver driver;
@@ -39,7 +40,9 @@ public class HomePage {
 	}
 	
 	public void logOut() {
+		WaitUtility.waitForButtonToBeClickable(driver, profileSettingsElement);
 		profileSettingsElement.click();
+		WaitUtility.waitForButtonToBeClickable(driver, logoutElement);
 		logoutElement.click();
 	}
 	
@@ -52,5 +55,27 @@ public class HomePage {
 		generalUtility=new GeneralUtility(driver);
 		List<String> dashBoardElementsName=generalUtility.getTextOfElements(dashBoardElements);
 		return dashBoardElementsName;
+	}
+	
+	public List<String> getExpectedDashBoardElementsText(){
+		List<String> expectedDashBoardElements=new ArrayList<String>();
+		expectedDashBoardElements.add("Manage Pages");
+		expectedDashBoardElements.add("Admin Users");
+		expectedDashBoardElements.add("Dashboard");
+		expectedDashBoardElements.add("Category");
+		expectedDashBoardElements.add("Manage Product");
+		expectedDashBoardElements.add("Manage Offer Code");
+		expectedDashBoardElements.add("Manage Slider");
+		expectedDashBoardElements.add("Manage Delivery Boy");
+		expectedDashBoardElements.add("Manage Users");
+		expectedDashBoardElements.add("Manage Orders");
+		expectedDashBoardElements.add("Manage Location");
+		expectedDashBoardElements.add("Mobile Slider");
+		expectedDashBoardElements.add("Manage News");
+		expectedDashBoardElements.add("Manage Expense");
+		expectedDashBoardElements.add("Manage Gift cards &vouchers");
+		expectedDashBoardElements.add("Manage Gift cards &vouchers");
+		return expectedDashBoardElements;
+		
 	}
 }

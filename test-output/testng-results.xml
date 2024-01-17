@@ -1,165 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-17T16:20:51 IST" name="Default suite" finished-at="2024-01-17T16:21:25 IST" duration-ms="33970">
+  <suite started-at="2024-01-17T17:38:11 IST" name="Default suite" finished-at="2024-01-17T17:38:19 IST" duration-ms="8137">
     <groups>
-      <group name="regression">
-        <method signature="LoginTest.verifyLogin()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" name="verifyLogin" class="com.sevenrmartsupermarket.tests.LoginTest"/>
-      </group> <!-- regression -->
-      <group name="smoke">
-        <method signature="LoginTest.excelRead()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" name="excelRead" class="com.sevenrmartsupermarket.tests.LoginTest"/>
-      </group> <!-- smoke -->
     </groups>
-    <test started-at="2024-01-17T16:20:51 IST" name="Default test" finished-at="2024-01-17T16:21:25 IST" duration-ms="33970">
-      <class name="com.sevenrmartsupermarket.tests.LoginTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" started-at="2024-01-17T16:20:52 IST" name="launchBrowser" finished-at="2024-01-17T16:20:59 IST" duration-ms="7799" status="PASS">
+    <test started-at="2024-01-17T17:38:11 IST" name="Default test" finished-at="2024-01-17T17:38:19 IST" duration-ms="8137">
+      <class name="com.sevenrmartsupermarket.tests.HomeTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@3d34d211]" started-at="2024-01-17T17:38:11 IST" name="launchBrowser" finished-at="2024-01-17T17:38:16 IST" duration-ms="5170" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="excelRead()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" started-at="2024-01-17T16:20:59 IST" name="excelRead" finished-at="2024-01-17T16:21:00 IST" duration-ms="1104" status="PASS">
+        <test-method signature="verifyLogout()[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@3d34d211]" started-at="2024-01-17T17:38:16 IST" name="verifyLogout" finished-at="2024-01-17T17:38:19 IST" duration-ms="2636" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- excelRead -->
-        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" started-at="2024-01-17T16:21:00 IST" name="terminateSession" finished-at="2024-01-17T16:21:01 IST" duration-ms="205" status="PASS">
+        </test-method> <!-- verifyLogout -->
+        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@3d34d211]" started-at="2024-01-17T17:38:19 IST" name="terminateSession" finished-at="2024-01-17T17:38:19 IST" duration-ms="276" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=excelRead status=SUCCESS method=LoginTest.excelRead()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb] output={null}]]]>
+                <![CDATA[[TestResult name=verifyLogout status=SUCCESS method=HomeTest.verifyLogout()[pri:0, instance:com.sevenrmartsupermarket.tests.HomeTest@3d34d211] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- terminateSession -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" started-at="2024-01-17T16:21:01 IST" name="launchBrowser" finished-at="2024-01-17T16:21:04 IST" duration-ms="3812" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyLogin()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" started-at="2024-01-17T16:21:04 IST" name="verifyLogin" finished-at="2024-01-17T16:21:07 IST" duration-ms="2135" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLogin -->
-        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" started-at="2024-01-17T16:21:07 IST" name="terminateSession" finished-at="2024-01-17T16:21:07 IST" duration-ms="430" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyLogin status=SUCCESS method=LoginTest.verifyLogin()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- terminateSession -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" started-at="2024-01-17T16:21:07 IST" name="launchBrowser" finished-at="2024-01-17T16:21:11 IST" duration-ms="3774" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyLoginUsingDataProvider(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" started-at="2024-01-17T16:21:11 IST" name="verifyLoginUsingDataProvider" data-provider="SevenMart SuperMarket Valid Login" finished-at="2024-01-17T16:21:13 IST" duration-ms="1620" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[astarlogics]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Password123]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Astarlogics]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginUsingDataProvider -->
-        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" started-at="2024-01-17T16:21:13 IST" name="terminateSession" finished-at="2024-01-17T16:21:13 IST" duration-ms="382" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyLoginUsingDataProvider status=SUCCESS method=LoginTest.verifyLoginUsingDataProvider(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- terminateSession -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" started-at="2024-01-17T16:21:13 IST" name="launchBrowser" finished-at="2024-01-17T16:21:17 IST" duration-ms="4080" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyLoginUsingDataProvider(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" started-at="2024-01-17T16:21:17 IST" name="verifyLoginUsingDataProvider" data-provider="SevenMart SuperMarket Valid Login" finished-at="2024-01-17T16:21:19 IST" duration-ms="1872" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[jithu]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[hghg]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Jithu]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginUsingDataProvider -->
-        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" started-at="2024-01-17T16:21:19 IST" name="terminateSession" finished-at="2024-01-17T16:21:19 IST" duration-ms="154" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyLoginUsingDataProvider status=SUCCESS method=LoginTest.verifyLoginUsingDataProvider(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- terminateSession -->
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" started-at="2024-01-17T16:21:19 IST" name="launchBrowser" finished-at="2024-01-17T16:21:24 IST" duration-ms="4452" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyLoginUsingDataProvider(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" started-at="2024-01-17T16:21:24 IST" name="verifyLoginUsingDataProvider" data-provider="SevenMart SuperMarket Valid Login" finished-at="2024-01-17T16:21:25 IST" duration-ms="1688" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Admin]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginUsingDataProvider -->
-        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb]" started-at="2024-01-17T16:21:25 IST" name="terminateSession" finished-at="2024-01-17T16:21:25 IST" duration-ms="193" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyLoginUsingDataProvider status=SUCCESS method=LoginTest.verifyLoginUsingDataProvider(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@473847fb] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- terminateSession -->
-      </class> <!-- com.sevenrmartsupermarket.tests.LoginTest -->
+      </class> <!-- com.sevenrmartsupermarket.tests.HomeTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
