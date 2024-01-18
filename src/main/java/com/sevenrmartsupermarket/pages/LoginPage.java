@@ -58,7 +58,6 @@ public class LoginPage {
 	}
 
 	public void login() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICIT_WAIT));
 		String userName = properties.getProperty("username");
 		String password = properties.getProperty("password");
 		enterUserName(userName);
@@ -67,7 +66,6 @@ public class LoginPage {
 	}
 
 	public void login(String username, String password) {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WaitUtility.IMPLICIT_WAIT));
 		enterUserName(username);
 		enterPassword(password);
 		clickOnSignInButton();

@@ -7,7 +7,7 @@
         <methods>
           <include name="launchBrowser"/>
           <include name="launchBrowser"/>
-          <include name="verifyLogin"/>
+          <include name="verifyLoginUsingExcelRead"/>
           <include name="terminateSession"/>
         </methods>
       </class> <!-- com.sevenrmartsupermarket.tests.LoginTest -->
