@@ -2,34 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-01-17T19:15:51 IST" name="Default suite" finished-at="2024-01-17T19:15:58 IST" duration-ms="7530">
+  <suite started-at="2024-01-19T15:43:45Z" name="Default suite" finished-at="2024-01-19T15:43:55Z" duration-ms="9632">
     <groups>
-      <group name="smoke">
-        <method signature="LoginTest.verifyLoginUsingExcelRead()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@70325e14]" name="verifyLoginUsingExcelRead" class="com.sevenrmartsupermarket.tests.LoginTest"/>
-      </group> <!-- smoke -->
     </groups>
-    <test started-at="2024-01-17T19:15:51 IST" name="Default test" finished-at="2024-01-17T19:15:58 IST" duration-ms="7530">
-      <class name="com.sevenrmartsupermarket.tests.LoginTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@70325e14]" started-at="2024-01-17T19:15:51 IST" name="launchBrowser" finished-at="2024-01-17T19:15:56 IST" duration-ms="4919" status="PASS">
+    <test started-at="2024-01-19T15:43:45Z" name="Default test" finished-at="2024-01-19T15:43:55Z" duration-ms="9632">
+      <class name="com.sevenrmartsupermarket.tests.AdminUsersTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.sevenrmartsupermarket.tests.AdminUsersTest@503f91c3]" started-at="2024-01-19T21:13:45Z" name="launchBrowser" finished-at="2024-01-19T21:13:51Z" duration-ms="5103" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="verifyLoginUsingExcelRead()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@70325e14]" started-at="2024-01-17T19:15:56 IST" name="verifyLoginUsingExcelRead" finished-at="2024-01-17T19:15:58 IST" duration-ms="2396" status="PASS">
+        <test-method signature="verifyCreatingNewAdminUser()[pri:0, instance:com.sevenrmartsupermarket.tests.AdminUsersTest@503f91c3]" started-at="2024-01-19T21:13:51Z" name="verifyCreatingNewAdminUser" finished-at="2024-01-19T21:13:55Z" duration-ms="4502" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLoginUsingExcelRead -->
-        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@70325e14]" started-at="2024-01-17T19:15:58 IST" name="terminateSession" finished-at="2024-01-17T19:15:58 IST" duration-ms="148" status="PASS">
+        </test-method> <!-- verifyCreatingNewAdminUser -->
+        <test-method is-config="true" signature="terminateSession(org.testng.ITestResult)[pri:0, instance:com.sevenrmartsupermarket.tests.AdminUsersTest@503f91c3]" started-at="2024-01-19T21:13:55Z" name="terminateSession" finished-at="2024-01-19T21:13:55Z" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyLoginUsingExcelRead status=SUCCESS method=LoginTest.verifyLoginUsingExcelRead()[pri:0, instance:com.sevenrmartsupermarket.tests.LoginTest@70325e14] output={null}]]]>
+                <![CDATA[[TestResult name=verifyCreatingNewAdminUser status=SUCCESS method=AdminUsersTest.verifyCreatingNewAdminUser()[pri:0, instance:com.sevenrmartsupermarket.tests.AdminUsersTest@503f91c3] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- terminateSession -->
-      </class> <!-- com.sevenrmartsupermarket.tests.LoginTest -->
+      </class> <!-- com.sevenrmartsupermarket.tests.AdminUsersTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
